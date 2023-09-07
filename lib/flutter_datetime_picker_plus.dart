@@ -507,7 +507,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
               pressedOpacity: 0.3,
               // padding: EdgeInsetsDirectional.only(end: 16, top: 0),
               child: Text(
-                widget.locale.toString().contains("en")'Done' : "ជ្រើសរើស",
+                widget.locale.toString().contains("en") ? 'Done' : "ជ្រើសរើស",
                 style: theme.doneStyle,
               ),
               onPressed: () {
