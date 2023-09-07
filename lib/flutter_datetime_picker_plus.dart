@@ -473,7 +473,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
 
   // Title View
   Widget _renderTitleActionsView(picker_theme.DatePickerTheme theme) {
-    final done = _localeDone();
+    final  = _locale();
     final cancel = _localeCancel();
     return Container(
       height: theme.titleHeight,
@@ -502,10 +502,10 @@ class _DatePickerState extends State<_DatePickerComponent> {
           ),
           Container(
             height: theme.titleHeight,
-              width: 120,
+              // width: 120,
             child: CupertinoButton(
               pressedOpacity: 0.3,
-              // padding: EdgeInsetsDirectional.only(end: 16, top: 0),
+              padding: EdgeInsetsDirectional.only(end: 16, top: 0),
               child: Text(
                 widget.locale.toString().contains("en") ? 'Done' : "ជ្រើសរើស",
                 style: theme.doneStyle,
