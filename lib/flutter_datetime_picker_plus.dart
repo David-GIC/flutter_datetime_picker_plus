@@ -475,9 +475,6 @@ class _DatePickerState extends State<_DatePickerComponent> {
   Widget _renderTitleActionsView(picker_theme.DatePickerTheme theme) {
     final done = _localeDone();
     final cancel = _localeCancel();
-
-      print("done is $done");
-
     return Container(
       height: theme.titleHeight,
       decoration: BoxDecoration(
@@ -510,7 +507,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
               pressedOpacity: 0.3,
               // padding: EdgeInsetsDirectional.only(end: 16, top: 0),
               child: Text(
-                '$done',
+                widget.locale.toString().contains("en")'Done' : "ជ្រើសរើស",
                 style: theme.doneStyle,
               ),
               onPressed: () {
