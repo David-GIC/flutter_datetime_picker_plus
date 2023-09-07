@@ -476,6 +476,8 @@ class _DatePickerState extends State<_DatePickerComponent> {
     final done = _localeDone();
     final cancel = _localeCancel();
 
+      print("done is $done");
+
     return Container(
       height: theme.titleHeight,
       decoration: BoxDecoration(
