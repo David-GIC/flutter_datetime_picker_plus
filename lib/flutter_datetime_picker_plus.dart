@@ -503,6 +503,7 @@ class _DatePickerState extends State<_DatePickerComponent> {
           ),
           Container(
             height: theme.titleHeight,
+              width: 120,
             child: CupertinoButton(
               pressedOpacity: 0.3,
               padding: EdgeInsetsDirectional.only(end: 16, top: 0),
