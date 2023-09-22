@@ -483,41 +483,31 @@ class _DatePickerState extends State<_DatePickerComponent> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Container(
-            height: theme.titleHeight,
-            child: CupertinoButton(
-              pressedOpacity: 0.3,
-              padding: EdgeInsetsDirectional.only(start: 16, top: 0),
-              child: Text(
-                '$cancel',
-                style: theme.cancelStyle,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-                if (widget.route.onCancel != null) {
-                  widget.route.onCancel!();
-                }
-              },
+          TextButton(
+            child: Text(
+              widget.locale.toString().contains("en") ? 'Cancel' : "បោះបង់",
+              style: theme.cancelStyle,
             ),
+            onPressed: () {
+              Navigator.pop(context);
+              if (widget.route.onCancel != null) {
+                widget.route.onCancel!();
+              }
+            },
           ),
-          Container(
-            height: theme.titleHeight,
-              // width: 120,
-            child: CupertinoButton(
-              pressedOpacity: 0.3,
-              padding: EdgeInsetsDirectional.only(end: 16, top: 0),
-              child: Text(
-                widget.locale.toString().contains("en") ? 'Done' : "ជ្រើសរើស",
-                style: theme.doneStyle,
-              ),
-              onPressed: () {
-                Navigator.pop(context, widget.pickerModel.finalTime());
-                if (widget.route.onConfirm != null) {
-                  widget.route.onConfirm!(widget.pickerModel.finalTime()!);
-                }
-              },
+          TextButton(
+            child: Text(
+              widget.locale.toString().contains("en") ? 'Done' : "ជ្រើសរើស",
+              style: theme.doneStyle,
             ),
+            onPressed: () {
+              Navigator.pop(context, widget.pickerModel.finalTime());
+              if (widget.route.onConfirm != null) {
+                widget.route.onConfirm!(widget.pickerModel.finalTime()!);
+              }
+            },
           ),
+        
         ],
       ),
     );
